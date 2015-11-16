@@ -434,14 +434,14 @@
           return _open.apply(req, arguments);
         };
       };
-      window.XMLHttpRequest = function(flags) {
+      window.XMLHttpRequest_ = function(flags) {
         var req;
         req = new _XMLHttpRequest(flags);
         monitorXHR(req);
         return req;
       };
       try {
-        extendNative(window.XMLHttpRequest, _XMLHttpRequest);
+        extendNative(window.XMLHttpRequest_, _XMLHttpRequest);
       } catch (_error) {}
       if (_XDomainRequest != null) {
         window.XDomainRequest = function() {
